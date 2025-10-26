@@ -23,7 +23,7 @@ theme:
 # 插件配置
 plugins:
   - search # 自带的搜索插件
-  - roamlinks # 【已修正】移除所有无效选项，使用默认设置
+  - roamlinks # 使用默认设置
 
 # 导航栏配置 (!!重要!!)
 # 格式: '导航栏标题': '文件名.md'
@@ -47,7 +47,14 @@ nav:
   - '备选方案 (ROS 2)':
     - 'ROS 2': 'ROS2.md'
     - 'MAVSDK': 'MAVSDK.md'
+# Markdown 扩展配置 (已添加缺失的扩展)
 markdown_extensions:
+  # 基础扩展
+  - footnotes # 启用脚注 ([^1])
+  - admonition # 启用提示框 (> [!NOTE])
+  - attr_list # 启用高亮 (==文字==)
+
+  # Mermaid 图表和代码块
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
