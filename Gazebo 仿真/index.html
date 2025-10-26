@@ -20,7 +20,7 @@
     
     
       
-        <title>Gazebo 仿真 - 我的无人机项目文档</title>
+        <title>Gazebo 仿真 - PX4无人机项目文档</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="我的无人机项目文档" class="md-header__button md-logo" aria-label="我的无人机项目文档" data-md-component="logo">
+    <a href=".." title="PX4无人机项目文档" class="md-header__button md-logo" aria-label="PX4无人机项目文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            我的无人机项目文档
+            PX4无人机项目文档
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -324,13 +324,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="我的无人机项目文档" class="md-nav__button md-logo" aria-label="我的无人机项目文档" data-md-component="logo">
+    <a href=".." title="PX4无人机项目文档" class="md-nav__button md-logo" aria-label="PX4无人机项目文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    我的无人机项目文档
+    PX4无人机项目文档
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1070,19 +1070,19 @@
 <p>这是从 <a href="../PX4/">PX4</a> 源码在 Ubuntu (Linux) 上构建 <a href="../SITL%20%28Software-In-The-Loop%29/">SITL (Software-In-The-Loop)</a> 仿真环境的详细步骤。</p>
 <h2 id="1-px4">1. 下载 PX4 源码</h2>
 <p>确保已安装 <code>git</code>。然后克隆 <code>PX4-Autopilot</code> 仓库，注意需要 <code>--recursive</code> 参数来下载所有子模块。</p>
-<pre><code>git clone [https://github.com/PX4/PX4-Autopilot.git](https://github.com/PX4/PX4-Autopilot.git) --recursive
-</code></pre>
+<div class="highlight"><pre><span></span><code>git clone [https://github.com/PX4/PX4-Autopilot.git](https://github.com/PX4/PX4-Autopilot.git) --recursive
+</code></pre></div>
 <h2 id="2-ubuntu">2. 运行 Ubuntu 安装脚本</h2>
 <p>PX4 源码中提供了一个方便的设置脚本，它会自动安装包括 <a href="./">Gazebo 仿真</a> (Classic 11) 在内的大部分依赖。</p>
-<pre><code>bash ./PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
-</code></pre>
+<div class="highlight"><pre><span></span><code>bash ./PX4-Autopilot/Tools/setup/ubuntu.sh --no-nuttx
+</code></pre></div>
 <h2 id="3">3. 重启计算机</h2>
 <p>安装完成后，需要重启以使所有更改生效。</p>
-<pre><code>sudo reboot
-</code></pre>
+<div class="highlight"><pre><span></span><code>sudo reboot
+</code></pre></div>
 <h2 id="4">4. 更新子模块和依赖</h2>
 <p>重启后，进入源码目录，再次确保子模块已更新，并安装一些额外的编译依赖。</p>
-<pre><code># 进入源码目录
+<div class="highlight"><pre><span></span><code># 进入源码目录
 cd PX4-Autopilot
 
 # 更新子模块
@@ -1090,11 +1090,11 @@ git submodule update --init --recursive
 
 # 下载 protobuf, eigen, opencv 等依赖
 sudo apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
-</code></pre>
+</code></pre></div>
 <h2 id="5">5. 构建并运行仿真</h2>
 <p>最后，编译 <code>px4_sitl_default</code> 目标，并指定 <code>gazebo</code> 作为后端。</p>
-<pre><code>make px4_sitl_default gazebo
-</code></pre>
+<div class="highlight"><pre><span></span><code>make px4_sitl_default gazebo
+</code></pre></div>
 <p>如果一切顺利，Gazebo 窗口将会启动，无人机模型会出现在仿真世界中。</p>
 <h2 id="6-troubleshooting">6. 常见问题 (Troubleshooting)</h2>
 <p>在构建过程中，你可能会遇到一些环境导致的问题（这些问题需通过终端输出判断）：</p>

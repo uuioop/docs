@@ -20,7 +20,7 @@
     
     
       
-        <title>ROS 1 - 我的无人机项目文档</title>
+        <title>ROS 1 - PX4无人机项目文档</title>
       
     
     
@@ -86,7 +86,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="我的无人机项目文档" class="md-header__button md-logo" aria-label="我的无人机项目文档" data-md-component="logo">
+    <a href=".." title="PX4无人机项目文档" class="md-header__button md-logo" aria-label="PX4无人机项目文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -100,7 +100,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            我的无人机项目文档
+            PX4无人机项目文档
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -324,13 +324,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="我的无人机项目文档" class="md-nav__button md-logo" aria-label="我的无人机项目文档" data-md-component="logo">
+    <a href=".." title="PX4无人机项目文档" class="md-nav__button md-logo" aria-label="PX4无人机项目文档" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    我的无人机项目文档
+    PX4无人机项目文档
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -980,11 +980,11 @@
 </blockquote>
 <p><a href="https://www.bilibili.com/video/BV1BP4y1o7pw/?spm_id_from=333.337.search-card.all.click&amp;vd_source=e35fecf3ad19c6e478d062509b67923d">ROS1中文视频教程，1-17讲</a></p>
 <h2 id="ros-1-noetic">安装 ROS 1 Noetic</h2>
-<pre><code># 添加 ROS 1 软件源
-sudo sh -c 'echo &quot;deb [http://packages.ros.org/ros/ubuntu](http://packages.ros.org/ros/ubuntu) $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list'
+<div class="highlight"><pre><span></span><code># 添加 ROS 1 软件源
+sudo sh -c &#39;echo &quot;deb [http://packages.ros.org/ros/ubuntu](http://packages.ros.org/ros/ubuntu) $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;
 
 # 添加密钥
-sudo apt install curl # if you haven't already installed curl
+sudo apt install curl # if you haven&#39;t already installed curl
 curl -s [https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc](https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc) | sudo apt-key add -
 
 # 安装
@@ -998,7 +998,7 @@ source ~/.bashrc
 # 安装依赖
 sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
 sudo apt install python3-rosdep
-</code></pre>
+</code></pre></div>
 <p><strong>关联: <a href="../2.%20%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E6%A0%88/">2. 核心技术栈</a></strong> <strong>返回: <a href="../">index</a></strong></p>
 
 
