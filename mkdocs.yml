@@ -1,5 +1,5 @@
 # 网站名称
-site_name: 我的无人机项目文档
+site_name: PX4无人机项目文档
 
 # 主题配置
 theme:
@@ -24,27 +24,28 @@ theme:
 plugins:
   - search # 自带的搜索插件
   - roamlinks: # 处理 [[WikiLinks]] 的插件
-      absolute_links: false # 使用相对路径
+      use_relative_links: true # 【已修正】使用相对路径
 
 # 导航栏配置 (!!重要!!)
 # 你需要在这里手动把你 Home.md 里的结构“复刻”一遍
-# 格式: '导航栏标题': 'docs/文件名.md'
+# 格式: '导航栏标题': '文件名.md'
 nav:
-  - '主页': 'docs/Home.md'
+  - '主页': 'Home.md' # 【已修正】移除了 'docs/'
   - '系统设计':
-    - '系统架构': 'docs/1. 系统架构.md'
-    - '核心技术栈': 'docs/2. 核心技术栈.md'
-    - '仿真与测试': 'docs/4. 仿真与测试.md'
+    - '系统架构': '1. 系统架构.md'
+    - '核心技术栈': '2. 核心技术栈.md'
+    - '仿真与测试': '4. 仿真与测试.md'
+    - 'SITL': 'SITL (Software-In-The-Loop).md' # 【已新增】
   - '关键模块':
-    - '模块总览': 'docs/3. 关键模块详解.md'
-    - 'Aruco 定位': 'docs/Aruco 视觉定位.md'
-    - '号牌识别': 'docs/号牌识别模型.md'
-    - '控制逻辑': 'docs/自主控制逻辑.md'
+    - '模块总览': '3. 关键模块详解.md'
+    - 'Aruco 定位': 'Aruco 视觉定位.md'
+    - '号牌识别': '号牌识别模型.md'
+    - '控制逻辑': '自主控制逻辑.md'
   - '环境与安装 (主线)':
-    - 'ROS 1': 'docs/ROS1.md'
-    - 'MAVROS': 'docs/MAVROS.md'
-    - 'PX4 飞控': 'docs/PX4.md'
-    - 'Gazebo 仿真': 'docs/Gazebo 仿真.md'
+    - 'ROS 1': 'ROS1.md'
+    - 'MAVROS': 'MAVROS.md'
+    - 'PX4 飞控': 'PX4.md'
+    - 'Gazebo 仿真': 'Gazebo 仿真.md'
   - '备选方案 (ROS 2)':
-    - 'ROS 2': 'docs/ROS2.md'
-    - 'MAVSDK': 'docs/MAVSDK.md'
+    - 'ROS 2': 'ROS2.md'
+    - 'MAVSDK': 'MAVSDK.md'
