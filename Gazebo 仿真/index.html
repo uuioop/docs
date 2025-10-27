@@ -966,6 +966,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#px4" class="md-nav__link">
+    <span class="md-ellipsis">
+      PX4 自定义模型仿真全流程总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PX4 自定义模型仿真全流程总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心理念：理解“身体”与“大脑”的分离
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一阶段：创建自定义模型 (三步走)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一阶段：创建自定义模型 (三步走)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 1：创建物理模型 (The Body)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 2：创建飞控配置 (The Brain)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3px4" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 3：向PX4编译系统“注册”新模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二阶段：问题排查之旅
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1262,6 +1337,81 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#px4" class="md-nav__link">
+    <span class="md-ellipsis">
+      PX4 自定义模型仿真全流程总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="PX4 自定义模型仿真全流程总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心理念：理解“身体”与“大脑”的分离
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一阶段：创建自定义模型 (三步走)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第一阶段：创建自定义模型 (三步走)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 1：创建物理模型 (The Body)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-brain" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 2：创建飞控配置 (The Brain)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3px4" class="md-nav__link">
+    <span class="md-ellipsis">
+      步骤 3：向PX4编译系统“注册”新模型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二阶段：问题排查之旅
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1284,7 +1434,7 @@
 <p>这是从 <a href="../PX4/">PX4</a> 源码在 Ubuntu (Linux) 上构建 <a href="../SITL%20%28Software-In-The-Loop%29/">SITL (Software-In-The-Loop)</a> 仿真环境的详细步骤。</p>
 <h2 id="1-px4">1. 下载 PX4 源码</h2>
 <p>确保已安装 <code>git</code>。然后克隆 <code>PX4-Autopilot</code> 仓库，注意需要 <code>--recursive</code> 参数来下载所有子模块。</p>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PX4/PX4-Autopilot.git<span class="w"> </span>--recursive
 </code></pre></div>
 <h2 id="2-ubuntu">2. 运行 Ubuntu 安装脚本</h2>
 <p>PX4 源码中提供了一个方便的设置脚本，它会自动安装包括 <a href="./">Gazebo 仿真</a> (Classic 11) 在内的大部分依赖。</p>
@@ -1316,7 +1466,7 @@ make<span class="w"> </span>px4_sitl_default<span class="w"> </span>gazebo
 <h2 id="6-gazebo">6. 下载Gazebo官方模型</h2>
 <p><a href="https://www.bilibili.com/video/BV143411C75B?spm_id_from=333.788.videopod.episodes&amp;vd_source=e35fecf3ad19c6e478d062509b67923d&amp;p=2">第二讲的2~4分钟有教学</a></p>
 <blockquote>
-<p><strong>由于PX4官方有一些与Gazebo官方同名的模型，因此需修改Gazebo官方的同名模型名称</strong>==（通常你启动PX4仿真如果遇到模型不匹配，就要检查下这种情况）==
+<p><strong>由于PX4官方有一些与Gazebo官方同名的模型，因此需修改Gazebo官方的同名模型名称</strong>（通常你启动PX4仿真如果遇到模型不匹配，就要检查下这种情况）
 PX4官方模型和世界文件可分别在<code>PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/</code>和<code>PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds/</code>找到</p>
 </blockquote>
 <p><strong>视频中gitee网址错误，这个才是正确的：</strong><code>https://gitee.com/bingda-robot/gazebo_models.git</code></p>
@@ -1429,9 +1579,171 @@ PX4官方模型和世界文件可分别在<code>PX4-Autopilot/Tools/simulation/g
 </code></pre></div></li>
 <li><strong>设置无人机初始位置</strong>
 <div class="highlight"><pre><span></span><code>roslaunch<span class="w"> </span>px4<span class="w"> </span>mavros_posix_sitl.launch<span class="w"> </span>vehicle:<span class="o">=</span>iris_depth_camera<span class="w"> </span>world:<span class="o">=</span>/home/colu/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds/empty.world<span class="w"> </span>x:<span class="o">=</span>-1<span class="w"> </span>y:<span class="o">=</span>-1<span class="w"> </span>z:<span class="o">=</span><span class="m">0</span>.1
-</code></pre></div>
-<strong>关联: <a href="../4.%20%E4%BB%BF%E7%9C%9F%E4%B8%8E%E6%B5%8B%E8%AF%95/">4. 仿真与测试</a>, <a href="../PX4/">PX4</a></strong> <strong>返回: <a href="../">index</a></strong></li>
+</code></pre></div></li>
 </ul>
+<hr />
+<blockquote>
+<p>由于PX4没有提供拥有前视和下视相机的无人机模型，因此<strong>要么自己自定义</strong>，要么<strong>在PX4官方模型上修改</strong>两种选择。
+<strong>注意</strong>：无人机模型才需要这么复杂，其他模型直接自定义就行
+自定义较为复杂，因此这里着重讲述
+以下都以官方的<code>iris_depth_camera</code>该无人机模型作为基准（不论自定义或修改）</p>
+</blockquote>
+<h1 id="px4">PX4 自定义模型仿真全流程总结</h1>
+<h4 id="_1"><strong>核心理念：理解“身体”与“大脑”的分离</strong></h4>
+<p>在PX4的仿真体系中，一个无人机模型由两个完全独立但又必须匹配的部分组成：</p>
+<ol>
+<li>
+<p><strong>物理模型 (身体)</strong>：这是无人机在Gazebo仿真世界中的3D外观、物理属性（质量、惯性）和传感器配置。它由一个 <code>.sdf</code> 文件定义。Gazebo只关心这个“身体”。</p>
+</li>
+<li>
+<p><strong>飞控配置 (大脑)</strong>：这是PX4固件内部的一个软件脚本，它告诉飞控软件如何为一个特定的机型配置参数（如PID、传感器校准）和加载哪些控制模块。PX4只关心这个“大脑”。</p>
+</li>
+</ol>
+<blockquote>
+<p>修改PX4官方模型只需修改Gazebo（身体）因为官方已经帮你创建了大脑；自定义则是两者都要
+以下为已成功的自定义模型（同理可以将该模型替换官方模型，不过名字之类的要保留原样）
+<a href="https://github.com/uuioop/px4_gazebo11">iris_front_down_camera</a></p>
+</blockquote>
+<hr />
+<h3 id="_2"><strong>第一阶段：创建自定义模型 (三步走)</strong></h3>
+<p>要成功启动自定义模型，必须完成以下三个核心步骤：</p>
+<h4 id="1-the-body"><strong>步骤 1：创建物理模型 (The Body)</strong></h4>
+<p>这是您为无人机在Gazebo中创建的3D实体。</p>
+<ul>
+<li>
+<p><strong>位置</strong>：</p>
+<div class="highlight"><pre><span></span><code>PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/models/
+</code></pre></div>
+</li>
+<li>
+<p><strong>操作</strong>：</p>
+<ol>
+<li>
+<p><strong>复制基础模型</strong>：复制一个现有的、工作正常的模型文件夹（例如 <code>iris_depth_camera</code>），并重命名为您自己的模型名称（例如 <code>iris_front_down_camera</code>）。</p>
+</li>
+<li>
+<p><strong>重命名SDF文件</strong>：将文件夹内的 <code>.sdf</code> 或 <code>.sdf.jinja</code> 文件重命名以匹配文件夹名称（例如 <code>iris_front_down_camera.sdf</code>）。</p>
+</li>
+<li>
+<p><strong>修改<code>model.config</code></strong>：打开 <code>model.config</code> 文件，将 <code>&lt;name&gt;</code> 标签内的名称修改为您的模型名。</p>
+</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>以官方模型为基础做修改的，到这就完成了，可以尝试<code>make px4_sitl gazebo-classic_iris_depth_camera</code>或<code>roslaunch px4 mavros_posix_sitl.launch vehicle:=iris_depth_camera</code>启动</p>
+</blockquote>
+<h4 id="2-the-brain"><strong>步骤 2：创建飞控配置 (The Brain)</strong></h4>
+<p>这是为您的模型创建的软件配置文件，让PX4认识它。</p>
+<ul>
+<li>
+<p><strong>位置</strong>：</p>
+<div class="highlight"><pre><span></span><code>PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/
+</code></pre></div>
+</li>
+<li>
+<p><strong>操作</strong>：</p>
+<ol>
+<li>
+<p><strong>创建新脚本</strong>：在此目录下创建一个新的脚本文件。</p>
+</li>
+<li>
+<p><strong>遵循命名规则（关键！）</strong>：文件名必须遵循 <code>_gazebo-classic_[模型名]</code> 的格式。</p>
+<ul>
+<li>
+<p>一个唯一的数字ID。官方建议自定义模型使用 <code>22000</code> 到 <code>22999</code> 之间的数字 1。</p>
+</li>
+<li>
+<p><code>[模型名]</code>：与您在 <code>roslaunch</code> 命令中 <code>vehicle:=</code> 参数指定的值完全一致。</p>
+</li>
+<li>
+<p><strong>示例</strong>：<code>22000_gazebo-classic_iris_front_down_camera</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>编写脚本内容</strong>：最简单的方式是复制一个现有脚本（如 <code>1015_gazebo-classic_iris_depth_camera</code>）的内容，并修改文件顶部的注释信息（如 <code>@name</code>），以描述您的新模型</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="3px4"><strong>步骤 3：向PX4编译系统“注册”新模型</strong></h4>
+<p>这是最容易被忽略但至关重要的一步。它告诉PX4的编译系统，在编译固件时要把您新创建的“大脑”打包进去。</p>
+<ul>
+<li>
+<p><strong>位置</strong>：</p>
+<div class="highlight"><pre><span></span><code>PX4-Autopilot/ROMFS/px4fmu_common/init.d-posix/airframes/CMakeLists.txt
+</code></pre></div>
+</li>
+<li>
+<p><strong>操作</strong>：</p>
+<ol>
+<li>
+<p><strong>编辑CMakeLists.txt</strong>：打开这个文件，找到 <code>px4_add_romfs_files()</code> 函数。</p>
+</li>
+<li>
+<p><strong>添加文件名</strong>：将您在步骤2中创建的脚本文件名（不带路径）添加到这个列表中。</p>
+</li>
+<li>
+<p><strong>彻底重新编译</strong>：由于修改了编译系统的配置，必须执行一次“干净”的编译，才能让改动生效。
+    <div class="highlight"><pre><span></span><code># 在 PX4-Autopilot 根目录下执行
+make distclean
+make px4_sitl_default gazebo-classic
+</code></pre></div></p>
+</li>
+</ol>
+</li>
+</ul>
+<p>完成这三步后，您的自定义模型就已经被完全集成到PX4系统中了。</p>
+<blockquote>
+<p>不能用<code>make px4_sitl (自定义模型)</code>启动--该命令专为官方模型设计，推荐用<code>roslaunch px4 mavros_posix_sitl.launch vehicle:=(更换成你的模型)</code></p>
+</blockquote>
+<hr />
+<h3 id="_3"><strong>第二阶段：问题排查之旅</strong></h3>
+<blockquote>
+<p>可能会遇到些问题，先看看这边能不能解决
+以下是论坛的讨论，有可能对你有帮助。否则就选择<strong>修改官方模型</strong>那个方法吧
+<a href="https://discuss.px4.io/t/create-custom-model-for-sitl/6700/4">官方人员的流程</a>
+<a href="https://discuss.px4.io/t/adding-custom-model-in-gazebo-classic/43858/2">社区讨论</a></p>
+</blockquote>
+<ol>
+<li>
+<p><strong>问题：<code>Segmentation fault (core dumped)</code> 或 <code>exit code 139</code></strong></p>
+<ul>
+<li>
+<p><strong>现象</strong>：Gazebo仿真进程崩溃。</p>
+</li>
+<li>
+<p><strong>原因</strong>：这是一个内存访问错误，通常由SDF模型文件中的<strong>插件配置错误</strong>或<strong>不稳定的模型结构</strong>引起。</p>
+</li>
+<li>
+<p><strong>解决方案</strong>：</p>
+<ul>
+<li>
+<p><strong>隔离排查</strong>：通过注释掉SDF中的可疑部分（例如某个相机插件），来定位导致崩溃的具体原因。</p>
+</li>
+<li>
+<p><strong>最佳实践</strong>：放弃使用 <code>&lt;include&gt;</code> 方式来组合模型。创建一个<strong>完全自包含（self-contained）的SDF文件</strong>，将无人机机体、所有传感器和插件的完整定义都放在这一个文件中。这是最稳定、最推荐的做法。</p>
+</li>
+<li><strong>问题：<code>make px4_sitl gazebo-classic_...</code> 命令提示 <code>unknown target</code></strong></li>
+</ul>
+</li>
+<li>
+<p><strong>现象</strong>：使用 <code>make</code> 命令无法启动自定义模型，但可以启动官方模型（如 <code>iris_depth_camera</code>）。</p>
+</li>
+<li>
+<p><strong>原因</strong>：<code>make px4_sitl...</code> 是一种为<strong>官方模型</strong>预设的快捷启动方式。您的自定义模型并未在编译系统中注册这样一个快捷目标。</p>
+</li>
+<li>
+<p><strong>解决方案</strong>：这是正常现象。对于自定义模型，<strong>正确的启动方式是使用 <code>roslaunch</code></strong>，它不依赖于这些快捷目标。
+    <div class="highlight"><pre><span></span><code>roslaunch px4 mavros_posix_sitl.launch vehicle:=iris_front_down_camera
+</code></pre></div></p>
+</li>
+</ul>
+</li>
+</ol>
+<hr />
+<p><strong>关联: <a href="../4.%20%E4%BB%BF%E7%9C%9F%E4%B8%8E%E6%B5%8B%E8%AF%95/">4. 仿真与测试</a>, <a href="../PX4/">PX4</a></strong> <strong>返回: <a href="../">index</a></strong></p>
 
 
 

@@ -916,11 +916,11 @@
 <blockquote>
 <p>[!WARNING] 未完善
 该模块是实现视觉伺服的关键。</p>
+<p>[!NOTE] ROS2项目中是自定义节点
+ROS1项目使用社区包<code>aruco_detect</code>，该包发布和订阅的话题名称改变
+- <strong>包名</strong>: <code>aruco_detect</code></p>
 </blockquote>
 <ul>
-<li>
-<p><strong>节点名</strong>: <code>/vision_pose_estimator</code></p>
-</li>
 <li>
 <p><strong>订阅话题</strong>:</p>
 <ul>
@@ -935,25 +935,9 @@
 <li>
 <p><strong>发布话题</strong>:</p>
 <ul>
-<li><code>/target/pose_3d</code> (geometry_msgs/PoseStamped): Aruco 码在相机坐标系下的 3D 位姿。</li>
+<li><code>/fiducial_transforms</code> (fiducial_msgs/FiducialTransformArray): 具体定义自行查阅文档或测试</li>
+<li><code>/fiducial_images</code>(sensor_msgs/Image):调试图像——可用<code>rqt_image_view</code>或<code>rviz</code>查看</li>
 </ul>
-</li>
-<li>
-<p><strong>核心算法</strong>:</p>
-<ol>
-<li>
-<p>使用 <code>cv2.aruco</code> 库检测图像中的 Aruco 标记。</p>
-</li>
-<li>
-<p>获取相机内参（K）和畸变系数（D）。</p>
-</li>
-<li>
-<p>调用 <code>cv2.aruco.estimatePoseSingleMarkers</code> 或 <code>cv2.solvePnP</code> 解算出旋转向量 (rvec) 和平移向量 (tvec)。</p>
-</li>
-<li>
-<p>将 rvec (通过罗德里格斯变换转为旋转矩阵) 和 tvec 封装为 <code>PoseStamped</code> 消息发布。</p>
-</li>
-</ol>
 </li>
 </ul>
 <p><strong>关联: <a href="../3.%20%E5%85%B3%E9%94%AE%E6%A8%A1%E5%9D%97%E8%AF%A6%E8%A7%A3/">3. 关键模块详解</a>, <a href="../2.%20%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E6%A0%88/">2. 核心技术栈</a></strong></p>
