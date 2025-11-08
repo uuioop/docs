@@ -914,12 +914,12 @@
   <h1>控制逻辑</h1>
 
 <blockquote>
-<p>[!WARNING] 未完善
-这是系统的“大脑”，负责最高层的决策。</p>
+<p>这是系统的“大脑”，负责最高层的决策。</p>
 </blockquote>
 <ul>
-<li>
-<p><strong>节点名</strong>: <code>/autonomous_controller</code></p>
+<li><strong>节点名</strong>: <code>Drone_Control</code><blockquote>
+<p>以下话题和服务名称为伪代码</p>
+</blockquote>
 </li>
 <li>
 <p><strong>订阅话题</strong>:</p>
@@ -931,45 +931,71 @@
 <p><code>/target/plate_info</code> (来自 <a href="../%E5%8F%B7%E7%89%8C%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/">号牌识别模型</a>): 目标识别结果。</p>
 </li>
 <li>
-<p><code>/drone/pose</code> (来自 <a href="../MAVSDK/">MAVSDK</a>): 无人机当前位姿。</p>
+<p><code>/drone</code> (来自 <a href="../MAVROS/">MAVROS</a>): 无人机当前信息。</p>
 </li>
 </ul>
 </li>
 <li>
 <p><strong>发布话题</strong>:</p>
 <ul>
-<li><code>/drone/control_setpoint</code> (geometry_msgs/Twist 或 PoseStamped): 发送给 <a href="../MAVSDK/">MAVSDK</a> 的控制指令。</li>
+<li><code>/drone/control_setpoint</code> (GPS导航命令或速度指令): 发送给 <a href="../MAVROS/">MAVROS</a> 的控制指令。</li>
 </ul>
 </li>
 <li>
-<p><strong>核心逻辑 (状态机)</strong>:</p>
+<p><strong>核心逻辑 (任务机)</strong>——类似状态机:</p>
+<blockquote>
+<p>通过<strong>板外模式</strong>控制的飞行任务拥有另一核心逻辑（状态机）</p>
+</blockquote>
+</li>
+<li>
 <ul>
 <li>
-<p><strong>State 1: SEARCHING (搜索)</strong></p>
+<p><strong>State 1: IdleMission (空闲任务)</strong></p>
 <ul>
 <li>
-<p>执行预设巡航航线，同时 <a href="../%E5%8F%B7%E7%89%8C%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B/">号牌识别模型</a> 和 <a href="../Aruco%20%E8%A7%86%E8%A7%89%E5%AE%9A%E4%BD%8D/">Aruco 视觉定位</a> 保持开启。</p>
+<p>等待其他节点调用服务。</p>
 </li>
 <li>
-<p><em>转移条件</em>: 当检测到 Aruco 码并且号牌识别正确时 -&gt; <code>APPROACHING</code>。</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>State 2: APPROACHING (接近)</strong></p>
-<ul>
-<li>
-<p>使用 <code>/target/pose_3d</code> 的数据，通过一个 PID/PD 控制器计算速度指令，使无人机飞向目标正上方一定高度。</p>
-</li>
-<li>
-<p><em>转移条件</em>: 到达预设悬停点 -&gt; <code>TRACKING</code>。</p>
+<p>根据服务内容切换到对应任务。</p>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>State 3: TRACKING (跟踪)</strong></p>
+<p><strong>State 2: GPSNavMission (GPS导航任务)</strong></p>
 <ul>
-<li>持续使用 <code>/target/pose_3d</code> 数据进行视觉伺服，保持与目标的相对位置。</li>
+<li>
+<p>GPS导航到目的点</p>
+</li>
+<li>
+<p>切换到下一任务</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>State 3: ConfirmLicenseMission (号牌确认任务)</strong>——未验证</p>
+<ul>
+<li>
+<p>使用 <code>/target/plate_info</code> 的数据，使无人机进行位置变化，直到到达目标号牌位置。</p>
+</li>
+<li>
+<p>切换到下一任务</p>
+<ul>
+<li><strong>State 4: PrecisionLandMission (降落任务)</strong></li>
+</ul>
+</li>
+<li>
+<p>使用 <code>/target/pose_3d</code> 的数据，通过一个 P 控制器计算速度指令，使无人机飞向目标平台。</p>
+</li>
+<li>
+<p>请输入文本</p>
+<ul>
+<li><strong>State 5: SafeDepartureMission (远离平台任务)</strong>——实现中</li>
+</ul>
+</li>
+<li></li>
+<li>
+<p>回到<code>IdleMission</code></p>
+</li>
 </ul>
 </li>
 </ul>

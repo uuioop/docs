@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -575,6 +580,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Aruco 定位
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -586,6 +604,41 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      相机标定
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      视觉定位代码
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -897,6 +950,32 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      相机标定
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      视觉定位代码
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -914,9 +993,15 @@
   <h1>Aruco 定位</h1>
 
 <blockquote>
-<p>[!WARNING] 未完善
-该模块是实现视觉伺服的关键。</p>
-<p>[!NOTE] ROS2项目中是自定义节点
+<p>该模块是实现视觉伺服的关键。</p>
+<p>[!NOTE] 所有相机在使用Aruco视觉定位前都需进行相机标定（深度相机出厂已标定；香橙派USB相机已手动标定，寻找参数文件中）——<strong>用于获取相机参数</strong></p>
+</blockquote>
+<h4 id="_1">相机标定</h4>
+<p>先打印一张棋盘格（哑光纸）<a href="https://gitcode.com/Universal-Tool/29a4a">选择OpenCV</a>
+其次使用<strong>ROS社区</strong>的相机标定包（推荐，自行搜索教程）或<a href="https://opencv-camera-calibration.readthedocs.io/zh/latest/%E7%9B%B8%E6%9C%BA%E6%A0%87%E5%AE%9A%E5%92%8C3D%E9%87%8D%E5%BB%BA/2.%20%E4%BD%BF%E7%94%A8OpenCV%E8%BF%9B%E8%A1%8C%E7%9B%B8%E6%9C%BA%E6%A0%87%E5%AE%9A/">OpenCV官方</a></p>
+<h4 id="_2">视觉定位代码</h4>
+<blockquote>
+<p>[!NOTE] ROS2项目中是自定义节点——<a href="https://github.com/ARK-Electronics/tracktor-beam">aruco_tracker部分</a>
 ROS1项目使用社区包<code>aruco_detect</code>，该包发布和订阅的话题名称改变
 - <strong>包名</strong>: <code>aruco_detect</code></p>
 </blockquote>
