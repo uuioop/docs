@@ -71,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#sitl-software-in-the-loop" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -463,19 +458,6 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    仿真与测试
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -487,41 +469,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sitl-software-in-the-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      SITL (Software-In-The-Loop)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      仿真环境搭建
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -950,32 +897,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#sitl-software-in-the-loop" class="md-nav__link">
-    <span class="md-ellipsis">
-      SITL (Software-In-The-Loop)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      仿真环境搭建
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -992,39 +913,7 @@
 
   <h1>仿真与测试</h1>
 
-<p>仿真是本项目成功的第一步。我们使用 <a href="../Gazebo%20%E4%BB%BF%E7%9C%9F/">Gazebo 仿真</a> 配合 <a href="../PX4/">PX4</a> 的 <a href="../SITL%20%28Software-In-The-Loop%29/">SITL (Software-In-The-Loop)</a> 架构。</p>
-<h2 id="sitl-software-in-the-loop"><a href="../SITL%20%28Software-In-The-Loop%29/">SITL (Software-In-The-Loop)</a></h2>
-<ul>
-<li>
-<p><strong>定义</strong>: 软件在环仿真。<a href="../PX4/">PX4</a> 固件PC 上作为独立进程运行，它认为自己是在真实的硬件上运行。</p>
-</li>
-<li>
-<p><strong>通信</strong>:</p>
-<ol>
-<li>
-<p><a href="../PX4/">PX4</a>-SITL 进程通过 UDP 与 <a href="../Gazebo%20%E4%BB%BF%E7%9C%9F/">Gazebo 仿真</a> 通信，获取（模拟的）传感器数据（如 IMU, GPS）。</p>
-</li>
-<li>
-<p><a href="../PX4/">PX4</a>-SITL 将计算出的电机指令（PWM）发回给 <a href="../Gazebo%20%E4%BB%BF%E7%9C%9F/">Gazebo 仿真</a> 来驱动模型。</p>
-</li>
-<li>
-<p><a href="../MAVSDK/">MAVSDK</a> 通过 <code>localhost</code> (本地回环) 连接到 <a href="../PX4/">PX4</a>-SITL 进程，就像连接真实飞控一样。</p>
-</li>
-</ol>
-</li>
-</ul>
-<h2 id="_1">仿真环境搭建</h2>
-<ol>
-<li>
-<p><strong>模型</strong>: 在 Gazebo 中创建无人机模型（如 Iris）、带 Aruco 码的目标模型、带号牌的车辆模型。</p>
-</li>
-<li>
-<p><strong>世界 (World)</strong>: 构建仿真场景。</p>
-</li>
-<li>
-<p><strong>启动</strong>: 使用 <code>ros2 launch</code> 脚本一键启动 Gazebo、PX4 SITL 以及所有 <a href="../ROS2/">ROS 2</a> 节点。</p>
-</li>
-</ol>
+<p><a href="../Gazebo%20%E4%BB%BF%E7%9C%9F/">Gazebo 仿真</a></p>
 <p><strong>返回: <a href="../">index</a></strong></p>
 
 
