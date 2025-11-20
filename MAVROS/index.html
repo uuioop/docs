@@ -1002,16 +1002,18 @@ sudo ./install_geographiclib_datasets.sh
 </code></pre></div>
 <h2 id="_1">关于如何查询话题或服务如何使用的方法</h2>
 <blockquote>
-<p>前提是你要知道该用什么话题即如果你<strong>不知道话题名称</strong>这个的话我暂时没有什么方法，只能靠试（当然问AI 80%概率是对的）
-- <a href="https://wiki.ros.org/mavros">常用话题与服务在此查找</a>
-- <strong>不常用的则要分步骤查找</strong>
-1. 找到话题的数据类型
+<p>前提是你要知道该用什么话题即如果你<strong>不知道话题名称</strong>这个的话我暂时没有什么方法，只能靠试（当然问AI 80%概率是对的）</p>
+</blockquote>
+<ul>
+<li><a href="https://wiki.ros.org/mavros">常用话题与服务在此查找</a></li>
+<li><strong>不常用的则要分步骤查找</strong></li>
+<li>找到话题的数据类型
 <div class="highlight"><pre><span></span><code><span class="c1"># 比如我要找这个话题（前提是启动了飞控和MAVROS）</span>
 rostopic<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>/mavros/actuator_control
 <span class="c1"># 查看详细数据</span>
 rostopic<span class="w"> </span>info<span class="w"> </span>/mavros/actuator_control
-</code></pre></div></p>
-</blockquote>
+</code></pre></div></li>
+</ul>
 <p><div class="highlight"><pre><span></span><code><span class="c1"># 终端输出，由此可见该话题的数据类型为mavros_msgs/ActuatorControl</span>
 Type:<span class="w"> </span>mavros_msgs/ActuatorControl
 
@@ -1026,11 +1028,9 @@ http://docs.ros.org/en/noetic/api/mavros_msgs/html/msg/</p>
 <p>注意看网址。可知<strong>所有有关ROS的数据类型</strong>都在api目录下，然后根据<strong>Type: mavros_msgs/ActuatorControl</strong>可知我们进入的下一个目录是<strong>mavros_msgs</strong>，然后在网址上添加<code>/html/msg/</code> （不能继续用鼠标的方式点进去目录）。到这是不是以为有规律可循，然而有些不行有些行。
 例如 http://docs.ros.org/en/noetic/api/std_msgs/html/msg/ 可行， http://docs.ros.org/en/noetic/api/mavros_extras/html/msg/ 不行，具体原理跟<strong>Doxygen</strong>有关（我猜的）</p>
 </blockquote>
-<ol>
-<li>最后也是找到了
-http://docs.ros.org/en/noetic/api/mavros_msgs/html/msg/ActuatorControl.html
-<img alt="Pasted image 20251120210856.png" src="../Pasted%20image%2020251120210856.png" /></li>
-</ol>
+<p>最后也是找到了
+http://docs.ros.org/en/noetic/api/mavros_msgs/html/msg/ActuatorControl.html</p>
+<p><img alt="Pasted image 20251120210856.png" src="../Pasted%20image%2020251120210856.png" /></p>
 <p><a href="https://github.com/mavlink/mavros">mavros的github官方仓库</a>
 <strong>话题</strong>
 <div class="highlight"><pre><span></span><code>/mavros/actuator_control
