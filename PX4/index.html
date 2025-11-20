@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#px4" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -738,6 +743,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    PX4 飞控
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -749,6 +767,65 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#px4" class="md-nav__link">
+    <span class="md-ellipsis">
+      校准PX4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#px4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何学PX4
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何学PX4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一篇：自学
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二篇：系统学习
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -897,6 +974,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#px4" class="md-nav__link">
+    <span class="md-ellipsis">
+      校准PX4
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#px4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      如何学PX4
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="如何学PX4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      第一篇：自学
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      第二篇：系统学习
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -911,37 +1038,24 @@
 
 
 
-  <h1>PX4 飞控</h1>
-
 <p>PX4 是一个开源的、高性能的飞控固件。<a href="https://docs.px4.io/main/zh/">PX4官网</a></p>
-<ul>
-<li>
-<p><strong>在本项目的角色</strong>:</p>
-<ul>
-<li><code>PX4</code> 是飞行的执行者。它接收来自<code>MAVSDK</code> 的高层指令，并负责将其解算为毫秒级的电机控制信号。</li>
-</ul>
-</li>
-<li>
-<p><strong>关键模式：Offboard Mode</strong></p>
-<ul>
-<li>
-<p><code>Offboard</code> (外部控制) 模式是实现机载计算机控制的关键。</p>
-</li>
-<li>
-<p>在此模式下，<code>PX4</code> 期望外部源（即我们的 <a href="../MAVSDK/">MAVSDK</a>或<a href="../MAVROS/">MAVROS</a>桥接模块`）以高频率（例如 &gt;2Hz）持续发送控制设定点（Setpoint）。</p>
-</li>
-<li>
-<p>如果指令流中断，<code>PX4</code> 将触发安全机制（如悬停或返航）。</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>仿真</strong>:</p>
-<ul>
-<li><code>PX4</code> 提供了强大的 <a href="../SITL%20%28Software-In-The-Loop%29/">SITL (Software-In-The-Loop)</a> 模式，使其能与 <a href="../Gazebo%20%E4%BB%BF%E7%9C%9F/">Gazebo 仿真</a> 完美配合。</li>
-</ul>
-</li>
-</ul>
+<h2 id="px4">校准PX4</h2>
+<p><a href="https://doc.cuav.net/tutorial/px4-tutorial/zh-hans/assembly/config.html">文字教程</a></p>
+<p><a href="https://www.bilibili.com/video/BV1M54y1R71u/?spm_id_from=333.337.search-card.all.click">视频教程</a>
+B站一搜一大堆</p>
+<blockquote>
+<p>题外话：有个老哥跟我说Win11校准飞控会出毛病，建议Win7或Win10，我怀疑但没有证据反驳</p>
+</blockquote>
+<h1 id="px4_1">如何学PX4</h1>
+<h3 id="_1">第一篇：自学</h3>
+<p><a href="https://discuss.px4.io/">交流与讨论</a>
+<a href="https://docs.px4.io/main/en/">百科全书</a>
+<a href="https://aistudio.google.com/prompts/new_chat">能工智人</a></p>
+<blockquote>
+<p>温馨提示：百科全书的网址中main可切换为v1.14，代表该文档为PX4 v1.14版本，其他版本以次类推</p>
+</blockquote>
+<h2 id="_2">第二篇：系统学习</h2>
+<p>~~没找到~~</p>
 <p><strong>关联: <a href="../2.%20%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E6%A0%88/">2. 核心技术栈</a>, <a href="../MAVSDK/">MAVSDK</a>, <a href="../SITL%20%28Software-In-The-Loop%29/">SITL (Software-In-The-Loop)</a></strong></p>
 
 
