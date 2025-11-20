@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../ROS1/">
-      
-      
-        <link rel="next" href="../PX4/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>MAVROS - PX4无人机项目文档</title>
+        <title>有关设计思路 - PX4无人机项目文档</title>
       
     
     
@@ -71,11 +67,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#mavros-for-noetic" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -106,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MAVROS
+              有关设计思路
             
           </span>
         </div>
@@ -264,12 +255,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../ROS1/" class="md-tabs__link">
           
   
@@ -641,29 +630,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -676,7 +660,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             环境与安装 (主线)
@@ -710,30 +694,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    MAVROS
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../MAVROS/" class="md-nav__link">
         
   
   
@@ -744,42 +708,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mavros-for-noetic" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装 MAVROS (for Noetic)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      关于如何查询话题或服务如何使用的方法
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -950,32 +878,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mavros-for-noetic" class="md-nav__link">
-    <span class="md-ellipsis">
-      安装 MAVROS (for Noetic)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      关于如何查询话题或服务如何使用的方法
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -990,231 +892,9 @@
 
 
 
-  <h1>MAVROS</h1>
+  <h1>有关设计思路</h1>
 
-<h2 id="mavros-for-noetic">安装 MAVROS (for Noetic)</h2>
-<div class="highlight"><pre><span></span><code># 安装 mavros,前提是下载ROS Noetic
-sudo apt-get install ros-noetic-mavros
-
-# 下载 MAVROS 依赖的地理数据集
-cd /opt/ros/noetic/lib/mavros
-sudo ./install_geographiclib_datasets.sh
-</code></pre></div>
-<h2 id="_1">关于如何查询话题或服务如何使用的方法</h2>
-<blockquote>
-<p>前提是你要知道该用什么话题即如果你<strong>不知道话题名称</strong>这个的话我暂时没有什么方法，只能靠试（当然问AI 80%概率是对的）
-- <a href="https://wiki.ros.org/mavros">常用话题与服务在此查找</a>
-- <strong>不常用的则要分步骤查找</strong>
-1. 找到话题的数据类型
-<div class="highlight"><pre><span></span><code><span class="c1"># 比如我要找这个话题（前提是启动了飞控和MAVROS）</span>
-rostopic<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>/mavros/actuator_control
-<span class="c1"># 查看详细数据</span>
-rostopic<span class="w"> </span>info<span class="w"> </span>/mavros/actuator_control
-</code></pre></div></p>
-</blockquote>
-<p><div class="highlight"><pre><span></span><code><span class="c1"># 终端输出，由此可见该话题的数据类型为mavros_msgs/ActuatorControl</span>
-Type:<span class="w"> </span>mavros_msgs/ActuatorControl
-
-Publishers:<span class="w"> </span>None
-
-Subscribers:<span class="w"> </span>
-<span class="w"> </span>*<span class="w"> </span>/mavros<span class="w"> </span><span class="o">(</span>http://coluer:39275/<span class="o">)</span>
-</code></pre></div>
-2. 根据数据类型在以下网站查找
-http://docs.ros.org/en/noetic/api/mavros_msgs/html/msg/</p>
-<blockquote>
-<p>注意看网址。可知<strong>所有有关ROS的数据类型</strong>都在api目录下，然后根据<strong>Type: mavros_msgs/ActuatorControl</strong>可知我们进入的下一个目录是<strong>mavros_msgs</strong>，然后在网址上添加<code>/html/msg/</code> （不能继续用鼠标的方式点进去目录）。到这是不是以为有规律可循，然而有些不行有些行。
-例如 http://docs.ros.org/en/noetic/api/std_msgs/html/msg/ 可行， http://docs.ros.org/en/noetic/api/mavros_extras/html/msg/ 不行，具体原理跟<strong>Doxygen</strong>有关（我猜的）</p>
-</blockquote>
-<ol>
-<li>最后也是找到了
-http://docs.ros.org/en/noetic/api/mavros_msgs/html/msg/ActuatorControl.html
-![[Pasted image 20251120210856.png]]</li>
-</ol>
-<p><a href="https://github.com/mavlink/mavros">mavros的github官方仓库</a>
-<strong>话题</strong>
-<div class="highlight"><pre><span></span><code>/mavros/actuator_control
-/mavros/adsb/send
-/mavros/adsb/vehicle
-/mavros/altitude
-/mavros/battery
-/mavros/cam_imu_sync/cam_imu_stamp
-/mavros/camera/image_captured
-/mavros/cellular_status/status
-/mavros/companion_process/status
-/mavros/debug_value/debug
-/mavros/debug_value/debug_float_array
-/mavros/debug_value/debug_vector
-/mavros/debug_value/named_value_float
-/mavros/debug_value/named_value_int
-/mavros/debug_value/send
-/mavros/esc_info
-/mavros/esc_status
-/mavros/esc_telemetry
-/mavros/estimator_status
-/mavros/extended_state
-/mavros/fake_gps/mocap/tf
-/mavros/geofence/waypoints
-/mavros/global_position/compass_hdg
-/mavros/global_position/global
-/mavros/global_position/gp_lp_offset
-/mavros/global_position/gp_origin
-/mavros/global_position/local
-/mavros/global_position/raw/fix
-/mavros/global_position/raw/gps_vel
-/mavros/global_position/raw/satellites
-/mavros/global_position/rel_alt
-/mavros/global_position/set_gp_origin
-/mavros/gps_input/gps_input
-/mavros/gps_rtk/rtk_baseline
-/mavros/gps_rtk/send_rtcm
-/mavros/gpsstatus/gps1/raw
-/mavros/gpsstatus/gps1/rtk
-/mavros/gpsstatus/gps2/raw
-/mavros/gpsstatus/gps2/rtk
-/mavros/hil/actuator_controls
-/mavros/hil/controls
-/mavros/hil/gps
-/mavros/hil/imu_ned
-/mavros/hil/optical_flow
-/mavros/hil/rc_inputs
-/mavros/hil/state
-/mavros/home_position/home
-/mavros/home_position/set
-/mavros/imu/data
-/mavros/imu/data_raw
-/mavros/imu/diff_pressure
-/mavros/imu/mag
-/mavros/imu/static_pressure
-/mavros/imu/temperature_baro
-/mavros/imu/temperature_imu
-/mavros/landing_target/lt_marker
-/mavros/landing_target/pose
-/mavros/landing_target/pose_in
-/mavros/local_position/accel
-/mavros/local_position/odom
-/mavros/local_position/pose
-/mavros/local_position/pose_cov
-/mavros/local_position/velocity_body
-/mavros/local_position/velocity_body_cov
-/mavros/local_position/velocity_local
-/mavros/log_transfer/raw/log_data
-/mavros/log_transfer/raw/log_entry
-/mavros/mag_calibration/report
-/mavros/mag_calibration/status
-/mavros/manual_control/control
-/mavros/manual_control/send
-/mavros/mission/reached
-/mavros/mission/waypoints
-/mavros/mocap/pose
-/mavros/mount_control/command
-/mavros/mount_control/orientation
-/mavros/mount_control/status
-/mavros/nav_controller_output
-/mavros/obstacle/send
-/mavros/odometry/in
-/mavros/odometry/out
-/mavros/onboard_computer/status
-/mavros/param/param_value
-/mavros/play_tune
-/mavros/px4flow/ground_distance
-/mavros/px4flow/raw/optical_flow_rad
-/mavros/px4flow/raw/send
-/mavros/px4flow/temperature
-/mavros/radio_status
-/mavros/rallypoint/waypoints
-/mavros/rc/in
-/mavros/rc/out
-/mavros/rc/override
-/mavros/setpoint_accel/accel
-/mavros/setpoint_attitude/cmd_vel
-/mavros/setpoint_attitude/thrust
-/mavros/setpoint_position/global
-/mavros/setpoint_position/global_to_local
-/mavros/setpoint_position/local
-/mavros/setpoint_raw/attitude
-/mavros/setpoint_raw/global
-/mavros/setpoint_raw/local
-/mavros/setpoint_raw/target_attitude
-/mavros/setpoint_raw/target_global
-/mavros/setpoint_raw/target_local
-/mavros/setpoint_trajectory/desired
-/mavros/setpoint_trajectory/local
-/mavros/setpoint_velocity/cmd_vel
-/mavros/setpoint_velocity/cmd_vel_unstamped
-/mavros/state
-/mavros/statustext/recv
-/mavros/statustext/send
-/mavros/sys_status
-/mavros/target_actuator_control
-/mavros/terrain/report
-/mavros/time_reference
-/mavros/timesync_status
-/mavros/trajectory/desired
-/mavros/trajectory/generated
-/mavros/trajectory/path
-/mavros/tunnel/in
-/mavros/tunnel/out
-/mavros/vfr_hud
-/mavros/vision_pose/pose
-/mavros/vision_pose/pose_cov
-/mavros/vision_speed/speed_twist_cov
-/mavros/wind_estimation
-</code></pre></div>
-<strong>服务</strong>
-<div class="highlight"><pre><span></span><code>/mavros/cmd/arming
-/mavros/cmd/command
-/mavros/cmd/command_ack
-/mavros/cmd/command_int
-/mavros/cmd/land
-/mavros/cmd/set_home
-/mavros/cmd/takeoff
-/mavros/cmd/trigger_control
-/mavros/cmd/trigger_interval
-/mavros/cmd/vtol_transition
-/mavros/ftp/checksum
-/mavros/ftp/close
-/mavros/ftp/list
-/mavros/ftp/mkdir
-/mavros/ftp/open
-/mavros/ftp/read
-/mavros/ftp/remove
-/mavros/ftp/rename
-/mavros/ftp/reset
-/mavros/ftp/rmdir
-/mavros/ftp/truncate
-/mavros/ftp/write
-/mavros/geofence/clear
-/mavros/geofence/pull
-/mavros/geofence/push
-/mavros/get_loggers
-/mavros/home_position/req_update
-/mavros/log_transfer/raw/log_request_data
-/mavros/log_transfer/raw/log_request_end
-/mavros/log_transfer/raw/log_request_erase
-/mavros/log_transfer/raw/log_request_list
-/mavros/mission/clear
-/mavros/mission/pull
-/mavros/mission/push
-/mavros/mission/set_current
-/mavros/mount_control/configure
-/mavros/param/get
-/mavros/param/pull
-/mavros/param/push
-/mavros/param/set
-/mavros/rallypoint/clear
-/mavros/rallypoint/pull
-/mavros/rallypoint/push
-/mavros/set_logger_level
-/mavros/set_message_interval
-/mavros/set_mode
-/mavros/set_stream_rate
-/mavros/setpoint_position/mav_frame
-/mavros/setpoint_trajectory/mav_frame
-/mavros/setpoint_trajectory/reset
-/mavros/setpoint_velocity/mav_frame
-/mavros/vehicle_info_get
-</code></pre></div></p>
+<p>先完成逻辑，再重构设计</p>
 
 
 

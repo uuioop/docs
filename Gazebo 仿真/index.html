@@ -1210,7 +1210,7 @@ make<span class="w"> </span>px4_sitl_default<span class="w"> </span>gazebo
 <p>（可选但推荐）将 <code>sitl_gazebo</code> 包也添加到路径中：</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_PACKAGE_PATH</span><span class="o">=</span><span class="nv">$ROS_PACKAGE_PATH</span>:~/PX4-Autopilot/Tools/simulation/gazebo-classic
 </code></pre></div>
-<h3 id="33-4bashrc">3.3 若第4步成功，可将以下内容写入~/.bashrc中（可选，强烈推荐）</h3>
+<h3 id="33-bashrc">3.3 若前面步骤成功，可将以下内容写入~/.bashrc中（可选，强烈推荐）</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 请确保路径与您的实际安装路径一致</span>
 <span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-d<span class="w"> </span>~/PX4-Autopilot<span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
 <span class="w">  </span><span class="nb">source</span><span class="w"> </span>~/PX4-Autopilot/Tools/simulation/gazebo-classic/setup_gazebo.bash<span class="w"> </span>~/PX4-Autopilot<span class="w"> </span>~/PX4-Autopilot/build/px4_sitl_default
@@ -1239,6 +1239,12 @@ make<span class="w"> </span>px4_sitl_default<span class="w"> </span>gazebo
 </code></pre></div></li>
 <li><strong>设置无人机初始位置</strong>
 <div class="highlight"><pre><span></span><code>roslaunch<span class="w"> </span>px4<span class="w"> </span>mavros_posix_sitl.launch<span class="w"> </span>vehicle:<span class="o">=</span>iris_depth_camera<span class="w"> </span>world:<span class="o">=</span>/home/colu/PX4-Autopilot/Tools/simulation/gazebo-classic/sitl_gazebo-classic/worlds/empty.world<span class="w"> </span>x:<span class="o">=</span>-1<span class="w"> </span>y:<span class="o">=</span>-1<span class="w"> </span>z:<span class="o">=</span><span class="m">0</span>.1
+</code></pre></div></li>
+<li><strong>启动多无人机</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># 伴随着启动ROS</span>
+roslaunch<span class="w"> </span>px4<span class="w"> </span>multi_uav_mavros_sitl.launch
+<span class="c1"># 以下是不启动ROS的启动多无人机命令</span>
+./Tools/simulation/gazebo-classic/sitl_multiple_run.sh<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>-m<span class="w"> </span>iris
 </code></pre></div><blockquote>
 <p><strong>只有使用roslaunch启动</strong>无人机仿真才能启动与Gazebo的桥接，<strong>make命令</strong>仍旧不行</p>
 </blockquote>
